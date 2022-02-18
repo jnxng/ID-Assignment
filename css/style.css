@@ -38,12 +38,12 @@ header{
     
     background-color: #F3F2F2;
     }
-.logo{
+.viruspic{
     display: flex;
     align-items: center;
     padding-left: 20px;
     }
-.logo img{
+.viruspic img{
     width: 60px;
 }
 .logo p {
