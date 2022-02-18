@@ -93,3 +93,98 @@ function fetchData(country) {
 
   api_fetch(country);
 }
+
+function updateUI() {
+  updateStats();
+  axesLinearChart();
+}
+
+function updateStats() {
+  const total_cases = cases_list[cases_list.length - 1];
+  const new_confirmed_cases = total_cases - cases_list[cases_list.length - 2];
+
+  const total_recovered = recovered_list[recovered_list.length - 1];
+  const new_recovered_cases = total_recovered - recovered_list[recovered_list.length - 2];
+
+  const total_deaths = deaths_list[deaths_list.length - 1];
+  const new_deaths_cases = total_deaths - deaths_list[deaths_list.length - 2];
+
+  country_name_element.innerHTML = user_country;
+  total_cases_element.innerHTML = total_cases;
+  new_cases_element.innerHTML = `+${new_confirmed_cases}`;
+  recovered_element.innerHTML = total_recovered;
+  new_recovered_element.innerHTML = `+${new_recovered_cases}`;
+  deaths_element.innerHTML = total_deaths;
+  new_deaths_element.innerHTML = `+${new_deaths_cases}`;
+
+
+  dates.forEach((date) => {
+    formatedDates.push(formatDate(date));
+  });
+}
+
+
+let my_chart;
+function axesLinearChart() {
+  if (my_chart) {
+    my_chart.destroy();
+  }
+
+  my_chart = new Chart(ctx, {
+    type: "line",
+    data: {
+      datasets: [
+        {
+          label: "Cases",
+          data: cases_list,
+          fill: false,
+          borderColor: "#FFF",
+          backgroundColor: "#FFF",
+          borderWidth: 1,
+        },
+        {
+          label: "Recovered",
+          data: recovered_list,
+          fill: false,
+          borderColor: "#009688",
+          backgroundColor: "#009688",
+          borderWidth: 1,
+        },
+        {
+          label: "Deaths",
+          data: deaths_list,
+          fill: false,
+          borderColor: "#f44336",
+          backgroundColor: "#f44336",
+          borderWidth: 1,
+        },
+      ],
+      labels: formatedDates,
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    },
+  });
+}
+
+const monthsNames = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+function formatDate(dateString) {
+  let date = new Date(dateString);
+
+  return `${date.getDate()} ${monthsNames[date.getMonth()]}`;
+}
