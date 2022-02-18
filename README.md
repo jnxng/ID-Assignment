@@ -23,5 +23,8 @@ The website enables the user to see the statistics regarding Covid-19 Cases worl
 -Covid-19 API-
 It was the API used to assist us in getting the information from different countries to display the data in each country which is the main purpose of the website.
 
+-Adobe Xd-
+To create the wireframe
+
 # Testing
 
