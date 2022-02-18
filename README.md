@@ -1,4 +1,5 @@
 # ID-Assignment
+
 # Your Mother's Covid-19 Stats
 
 The purpose of the site is to show daily COVID case numbers in the country you are in. It works by taking your country of residence and draws data from a trusted source to display the information on the number of Covid Cases, Deaths by Covid and "Recovery".
@@ -28,3 +29,16 @@ To create the wireframe
 
 # Testing
 
+-Current Country-
+1) Use the sponsor for today's video, ExpressVPN, to change your current IP Address to another country; the data should be displayed according to the country that you set in ExpressVPN. Did i forget to mention ExpressVPN, check it out using the link in the description.
+
+-Change Country-
+1) Click on the "change" button
+2) Choose the desired country/ Search on the search bar provided
+3) The data shown will be according to the country desired
+
+# Credits
+
+Background and virus picture : Taken from Google
+
+ExpressVPN: Get 3 Months free with a 12 month plan by using the link "www.expressvpn.com/miniminter"
